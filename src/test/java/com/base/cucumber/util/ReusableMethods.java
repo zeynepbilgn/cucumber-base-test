@@ -1,7 +1,7 @@
 package com.base.cucumber.util;
 
 import com.base.cucumber.base.BaseTest;
-import org.openqa.selenium.NoSuchElementException;
+import com.base.cucumber.exception.CustomException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -14,45 +14,52 @@ import java.util.logging.Logger;
 
 public class ReusableMethods extends BaseTest {
 
-    static WebDriverWait wait = new WebDriverWait(driver, 10);
+    static WebDriverWait wait = new WebDriverWait(driver, Integer.parseInt(ConfigReader.getProperties().getProperty("timeout")));
     private static final Logger log = Logger.getLogger(String.valueOf(ReusableMethods.class));
 
-    public static void acceptCookies(WebElement acceptButton) {
-        try {
-            if (acceptButton.isDisplayed()) {
-                acceptButton.click();
-            }
-        } catch (NoSuchElementException e) {
-            throw new RuntimeException("No Such Element !");
-        }
-    }
-
     public static void clickFunction(WebElement clickElement) {
-        log.info("start element <click> process");
+        try {
+            log.info("start element <click> process : " + clickElement);
 
-        wait.until(ExpectedConditions.elementToBeClickable(clickElement));
-        clickElement.click();
-        log.info("element <click> process finish successfully");
-    }
-    public static void sendKeysFunction(WebElement sendKeysElement, String value) {
-        log.info("start element <send key> process");
+            wait.until(ExpectedConditions.elementToBeClickable(clickElement));
+            clickElement.click();
 
-        wait.until(ExpectedConditions.visibilityOf(sendKeysElement));
-        sendKeysElement.sendKeys(value);
+            log.info("element <click> process finish successfully : " + clickElement);
 
-        log.info("element <send key> process finish successfully");
-    }
-    public static WebElement selectRandomElement(List<WebElement> elementList, String elementName) {
-
-        if (elementList.isEmpty()) {
-            log.info(elementName + " list is empty.");
-            return null;
+        } catch (Exception e) {
+            throw new CustomException(
+                    CustomException.ExceptionMessageEnum.NO_SUCH_ELEMENT,
+                    CustomException.ExceptionMessageEnum.NO_SUCH_ELEMENT.getMessage());
         }
+    }
 
-        int randomIndex = new Random().nextInt(elementList.size());
-        WebElement selectedElement = elementList.get(randomIndex);
+    public static void sendKeysFunction(WebElement sendKeysElement, String value) {
+        try {
+            log.info("start element <send key> process : " + sendKeysElement);
 
-        log.info("Random one " + elementName + " selected: " + selectedElement.getText());
+            wait.until(ExpectedConditions.visibilityOf(sendKeysElement));
+            sendKeysElement.sendKeys(value);
+
+            log.info("element <send key> process finish successfully : " + sendKeysElement);
+
+        } catch (Exception e) {
+            throw new CustomException(
+                    CustomException.ExceptionMessageEnum.NO_SUCH_ELEMENT,
+                    CustomException.ExceptionMessageEnum.NO_SUCH_ELEMENT.getMessage());
+        }
+    }
+
+    public static WebElement selectRandomElement(List<WebElement> elementList) {
+        WebElement selectedElement = null;
+        try {
+            int randomIndex = new Random().nextInt(elementList.size());
+            selectedElement = elementList.get(randomIndex);
+            log.info("Random one selected element: " + selectedElement);
+        } catch (Exception e) {
+            throw new CustomException(
+                    CustomException.ExceptionMessageEnum.RANDOM_ITEM_NOT_FOUND,
+                    CustomException.ExceptionMessageEnum.RANDOM_ITEM_NOT_FOUND.getMessage());
+        }
 
         return selectedElement;
     }
