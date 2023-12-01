@@ -29,17 +29,18 @@ public class ReusableMethods extends BaseTest {
 
     public static void clickFunction(WebElement clickElement) {
         log.info("start element <click> process");
+
         wait.until(ExpectedConditions.elementToBeClickable(clickElement));
         clickElement.click();
         log.info("element <click> process finish successfully");
     }
     public static void sendKeysFunction(WebElement sendKeysElement, String value) {
-
         log.info("start element <send key> process");
+
         wait.until(ExpectedConditions.visibilityOf(sendKeysElement));
         sendKeysElement.sendKeys(value);
-        log.info("element <send key> process finish successfully");
 
+        log.info("element <send key> process finish successfully");
     }
     public static WebElement selectRandomElement(List<WebElement> elementList, String elementName) {
 
@@ -54,8 +55,8 @@ public class ReusableMethods extends BaseTest {
         log.info("Random one " + elementName + " selected: " + selectedElement.getText());
 
         return selectedElement;
-
     }
+
     public static void focusOnNewWindow() {
         String oldWindow = driver.getWindowHandle();
         Set<String> windowSet = driver.getWindowHandles();
@@ -63,6 +64,7 @@ public class ReusableMethods extends BaseTest {
         String newWindow = windowSet.iterator().next();
         driver.switchTo().window(newWindow);
     }
+
     public static void clickElementIsVisible(WebElement element) {
         try {
             wait.until(ExpectedConditions.visibilityOf(element)).click();

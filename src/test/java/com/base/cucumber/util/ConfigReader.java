@@ -8,7 +8,7 @@ import java.util.Properties;
 public class ConfigReader {
     private static Properties properties;
 
-    public static Properties initialize_Properties(){
+    public static void initialize_Properties(){
         properties = new Properties();
 
         try {
@@ -21,7 +21,6 @@ public class ConfigReader {
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
-        return getProperties();
     }
 
     public static Properties getProperties() {

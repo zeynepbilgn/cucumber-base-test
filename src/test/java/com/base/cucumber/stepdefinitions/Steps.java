@@ -51,5 +51,4 @@ public class Steps extends BaseTest {
     public void userAddsTheProductToTheCart() {
         ReusableMethods.clickFunction(homePage.addToBasketButton);
     }
-
 }

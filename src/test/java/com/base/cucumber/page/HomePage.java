@@ -14,13 +14,16 @@ public class HomePage {
 
     @FindBy(id = "twotabsearchtextbox")
     public WebElement searchField;
+
     @FindBy(id = "sp-cc-accept")
     public WebElement acceptCookies;
+
     @FindBy(id = "nav-search-submit-button")
     public WebElement searchButton;
+
     @FindBy(css = ".s-image")
     public List<WebElement> searcProductList;
+
     @FindBy(xpath = "//input[@id='add-to-cart-button']")
     public WebElement addToBasketButton;
-
 }
