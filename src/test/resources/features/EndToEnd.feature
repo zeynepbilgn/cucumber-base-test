@@ -1,3 +1,4 @@
+@e2e
 Feature: End-to-end automation testing for basic functions
 
   Scenario: Add product to cart testing

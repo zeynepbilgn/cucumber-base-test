@@ -1,28 +1,30 @@
 package com.base.cucumber.base;
 
 import com.base.cucumber.util.ConfigReader;
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.After;
-import org.junit.Before;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import com.base.cucumber.util.Driver;
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+
+import java.util.logging.Logger;
 
 public class BaseTest {
-
-    public static WebDriver driver;
+    private static final Logger log = Logger.getLogger(String.valueOf(BaseTest.class));
 
     @Before
     public void setUp() {
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        ConfigReader.initialize_Properties();
-        driver.get(ConfigReader.getProperties().getProperty("url"));
-        driver.manage().window().maximize();
+        Driver.getDriver().get(ConfigReader.getProperties().getProperty("url"));
     }
 
     @After
-    public void tearDown() {
-        driver.quit();
+    public void tearDown(Scenario scenario) {
+        final byte[] screenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
+        if (scenario.isFailed()) {
+            scenario.attach(screenshot, "image/png", "screenshots");
+        }
+        Driver.closeDriver();
     }
 }
 

@@ -1,6 +1,5 @@
 package com.base.cucumber.util;
 
-import com.base.cucumber.base.BaseTest;
 import com.base.cucumber.exception.CustomException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
@@ -12,9 +11,9 @@ import java.util.Random;
 import java.util.Set;
 import java.util.logging.Logger;
 
-public class ReusableMethods extends BaseTest {
+public class ReusableMethods {
 
-    static WebDriverWait wait = new WebDriverWait(driver, Integer.parseInt(ConfigReader.getProperties().getProperty("timeout")));
+    static WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
     private static final Logger log = Logger.getLogger(String.valueOf(ReusableMethods.class));
 
     public static void clickFunction(WebElement clickElement) {
@@ -65,11 +64,11 @@ public class ReusableMethods extends BaseTest {
     }
 
     public static void focusOnNewWindow() {
-        String oldWindow = driver.getWindowHandle();
-        Set<String> windowSet = driver.getWindowHandles();
+        String oldWindow = Driver.getDriver().getWindowHandle();
+        Set<String> windowSet = Driver.getDriver().getWindowHandles();
         windowSet.remove(oldWindow);
         String newWindow = windowSet.iterator().next();
-        driver.switchTo().window(newWindow);
+        Driver.getDriver().switchTo().window(newWindow);
     }
 
     public static void clickElementIsVisible(WebElement element) {
