@@ -5,13 +5,19 @@ import com.base.cucumber.util.Driver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
+import java.io.File;
+import java.io.IOException;
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.logging.Logger;
 
 public class BaseTest {
     private static final Logger log = Logger.getLogger(String.valueOf(BaseTest.class));
+    private static final String SS_DIRECTORY = "src/test/resources/screenshots";
 
     @Before
     public void setUp() {
@@ -20,11 +26,32 @@ public class BaseTest {
 
     @After
     public void tearDown(Scenario scenario) {
-        final byte[] screenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
         if (scenario.isFailed()) {
-            scenario.attach(screenshot, "image/png", "screenshots");
+            final byte[] screenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
+            createDirectory();
+
+            try {
+                String screenshotPath = SS_DIRECTORY +
+                        "/" +
+                        Timestamp.valueOf(LocalDateTime.now()).getTime() +
+                        "-" +
+                        scenario.getName().replace(" ", "") +
+                        ".png";
+                FileUtils.writeByteArrayToFile(new File(screenshotPath), screenshot);
+                scenario.attach(screenshot, "image/png", "screenshots");
+
+            } catch (IOException e) {
+                log.info("Getting an error while taking screen shot !: " + e.getMessage());
+            }
         }
         Driver.closeDriver();
     }
-}
 
+
+    private void createDirectory() {
+        File directory = new File(BaseTest.SS_DIRECTORY);
+        if (!directory.exists()) {
+            directory.mkdirs();
+        }
+    }
+}

@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         plugin = {
                 "pretty",
-                "html:src/test/resources/html/default-cucumber-reports.html",
+                "html:src/test/resources/html/selenium-cucumber-reports.html",
         },
         features = "src/test/resources/features",
         glue = {"com/base/cucumber/stepdefinitions", "com/base/cucumber/base"},
