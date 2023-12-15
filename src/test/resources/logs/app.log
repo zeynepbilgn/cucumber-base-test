@@ -1,0 +1,32 @@
+2023-12-15 17:28:02 INFO  ReusableMethods:22 - start element <click> process : [[ChromeDriver: chrome on MAC (7c9b32b3b64c51c086ce6a97a916d06c)] -> id: sp-cc-accept]
+2023-12-15 17:28:02 INFO  ReusableMethods:27 - element <click> process finish successfully : Proxy element for: DefaultElementLocator 'By.id: sp-cc-accept'
+2023-12-15 17:28:02 INFO  ReusableMethods:38 - start element <send key> process : [[ChromeDriver: chrome on MAC (7c9b32b3b64c51c086ce6a97a916d06c)] -> id: twotabsearchtextbox]
+2023-12-15 17:28:02 INFO  ReusableMethods:43 - element <send key> process finish successfully : [[ChromeDriver: chrome on MAC (7c9b32b3b64c51c086ce6a97a916d06c)] -> id: twotabsearchtextbox]
+2023-12-15 17:28:02 INFO  ReusableMethods:22 - start element <click> process : [[ChromeDriver: chrome on MAC (7c9b32b3b64c51c086ce6a97a916d06c)] -> id: nav-search-submit-button]
+2023-12-15 17:28:05 INFO  ReusableMethods:27 - element <click> process finish successfully : [[ChromeDriver: chrome on MAC (7c9b32b3b64c51c086ce6a97a916d06c)] -> id: nav-search-submit-button]
+2023-12-15 17:28:05 INFO  ReusableMethods:57 - Random one selected element: [[ChromeDriver: chrome on MAC (7c9b32b3b64c51c086ce6a97a916d06c)] -> css selector: .s-image]
+2023-12-15 17:28:05 INFO  ReusableMethods:22 - start element <click> process : [[ChromeDriver: chrome on MAC (7c9b32b3b64c51c086ce6a97a916d06c)] -> css selector: .s-image]
+2023-12-15 17:28:08 INFO  ReusableMethods:27 - element <click> process finish successfully : [[ChromeDriver: chrome on MAC (7c9b32b3b64c51c086ce6a97a916d06c)] -> css selector: .s-image]
+2023-12-15 17:28:08 INFO  ReusableMethods:22 - start element <click> process : [[ChromeDriver: chrome on MAC (7c9b32b3b64c51c086ce6a97a916d06c)] -> xpath: //input[@id='add-to-cart-button']]
+2023-12-15 17:28:09 INFO  ReusableMethods:27 - element <click> process finish successfully : Proxy element for: DefaultElementLocator 'By.xpath: //input[@id='add-to-cart-button']'
+2023-12-15 17:30:33 INFO  ReusableMethods:22 - start element <click> process : [[ChromeDriver: chrome on MAC (d7d529fc23e4d01bb24d520cfd8b8c66)] -> id: sp-cc-accept]
+2023-12-15 17:30:33 INFO  ReusableMethods:27 - element <click> process finish successfully : Proxy element for: DefaultElementLocator 'By.id: sp-cc-accept'
+2023-12-15 17:30:33 INFO  ReusableMethods:38 - start element <send key> process : [[ChromeDriver: chrome on MAC (d7d529fc23e4d01bb24d520cfd8b8c66)] -> id: twotabsearchtextbox]
+2023-12-15 17:30:33 INFO  ReusableMethods:43 - element <send key> process finish successfully : [[ChromeDriver: chrome on MAC (d7d529fc23e4d01bb24d520cfd8b8c66)] -> id: twotabsearchtextbox]
+2023-12-15 17:30:33 INFO  ReusableMethods:22 - start element <click> process : [[ChromeDriver: chrome on MAC (d7d529fc23e4d01bb24d520cfd8b8c66)] -> id: nav-search-submit-button]
+2023-12-15 17:30:36 INFO  ReusableMethods:27 - element <click> process finish successfully : [[ChromeDriver: chrome on MAC (d7d529fc23e4d01bb24d520cfd8b8c66)] -> id: nav-search-submit-button]
+2023-12-15 17:30:36 INFO  ReusableMethods:57 - Random one selected element: [[ChromeDriver: chrome on MAC (d7d529fc23e4d01bb24d520cfd8b8c66)] -> css selector: .s-image]
+2023-12-15 17:30:36 INFO  ReusableMethods:22 - start element <click> process : [[ChromeDriver: chrome on MAC (d7d529fc23e4d01bb24d520cfd8b8c66)] -> css selector: .s-image]
+2023-12-15 17:30:39 INFO  ReusableMethods:27 - element <click> process finish successfully : [[ChromeDriver: chrome on MAC (d7d529fc23e4d01bb24d520cfd8b8c66)] -> css selector: .s-image]
+2023-12-15 17:30:40 INFO  ReusableMethods:22 - start element <click> process : [[ChromeDriver: chrome on MAC (d7d529fc23e4d01bb24d520cfd8b8c66)] -> xpath: //input[@id='add-to-cart-button']]
+2023-12-15 17:31:31 INFO  ReusableMethods:22 - start element <click> process : [[ChromeDriver: chrome on MAC (6feb60d3367a7050817b395d37258661)] -> id: sp-cc-accept]
+2023-12-15 17:31:31 INFO  ReusableMethods:27 - element <click> process finish successfully : Proxy element for: DefaultElementLocator 'By.id: sp-cc-accept'
+2023-12-15 17:31:31 INFO  ReusableMethods:38 - start element <send key> process : [[ChromeDriver: chrome on MAC (6feb60d3367a7050817b395d37258661)] -> id: twotabsearchtextbox]
+2023-12-15 17:31:32 INFO  ReusableMethods:43 - element <send key> process finish successfully : [[ChromeDriver: chrome on MAC (6feb60d3367a7050817b395d37258661)] -> id: twotabsearchtextbox]
+2023-12-15 17:31:32 INFO  ReusableMethods:22 - start element <click> process : [[ChromeDriver: chrome on MAC (6feb60d3367a7050817b395d37258661)] -> id: nav-search-submit-button]
+2023-12-15 17:31:34 INFO  ReusableMethods:27 - element <click> process finish successfully : [[ChromeDriver: chrome on MAC (6feb60d3367a7050817b395d37258661)] -> id: nav-search-submit-button]
+2023-12-15 17:31:34 INFO  ReusableMethods:57 - Random one selected element: [[ChromeDriver: chrome on MAC (6feb60d3367a7050817b395d37258661)] -> css selector: .s-image]
+2023-12-15 17:31:34 INFO  ReusableMethods:22 - start element <click> process : [[ChromeDriver: chrome on MAC (6feb60d3367a7050817b395d37258661)] -> css selector: .s-image]
+2023-12-15 17:31:38 INFO  ReusableMethods:27 - element <click> process finish successfully : [[ChromeDriver: chrome on MAC (6feb60d3367a7050817b395d37258661)] -> css selector: .s-image]
+2023-12-15 17:31:38 INFO  ReusableMethods:22 - start element <click> process : [[ChromeDriver: chrome on MAC (6feb60d3367a7050817b395d37258661)] -> xpath: //input[@id='add-to-cart-button']]
+2023-12-15 17:31:40 INFO  ReusableMethods:27 - element <click> process finish successfully : Proxy element for: DefaultElementLocator 'By.xpath: //input[@id='add-to-cart-button']'

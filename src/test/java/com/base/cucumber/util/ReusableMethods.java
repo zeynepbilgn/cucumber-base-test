@@ -1,6 +1,7 @@
 package com.base.cucumber.util;
 
 import com.base.cucumber.exception.CustomException;
+import org.apache.logging.log4j.LogManager;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -9,12 +10,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.List;
 import java.util.Random;
 import java.util.Set;
-import java.util.logging.Logger;
+import org.apache.logging.log4j.Logger;
 
 public class ReusableMethods {
 
     static WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
-    private static final Logger log = Logger.getLogger(String.valueOf(ReusableMethods.class));
+    private static final Logger log =  LogManager.getLogger(ReusableMethods.class);
 
     public static void clickFunction(WebElement clickElement) {
         try {

@@ -13,10 +13,11 @@ import java.io.File;
 import java.io.IOException;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
-import java.util.logging.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class BaseTest {
-    private static final Logger log = Logger.getLogger(String.valueOf(BaseTest.class));
+    private static final Logger log = LogManager.getLogger(BaseTest.class);
     private static final String SS_DIRECTORY = "src/test/resources/screenshots";
 
     @Before
